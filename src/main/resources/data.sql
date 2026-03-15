@@ -61,93 +61,40 @@ CREATE TABLE note (
 -- ============================================
 
 -- Insertion des candidats
-INSERT INTO candidat (nom) VALUES ('Candidat1');
-INSERT INTO candidat (nom) VALUES ('Candidat2');
+INSERT INTO candidat (id, nom) VALUES (1, 'Candidat1');
+INSERT INTO candidat (id, nom) VALUES (2, 'Candidat2');
 
 -- Insertion des matières
-INSERT INTO matiere (nom) VALUES ('JAVA');
-INSERT INTO matiere (nom) VALUES ('PHP');
+INSERT INTO matiere (id, nom) VALUES (1, 'JAVA');
+INSERT INTO matiere (id, nom) VALUES (2, 'PHP');
 
 -- Insertion des correcteurs
-INSERT INTO correcteur (nom) VALUES ('Correcteur1');
-INSERT INTO correcteur (nom) VALUES ('Correcteur2');
-INSERT INTO correcteur (nom) VALUES ('Correcteur3');
+INSERT INTO correcteur (id, nom) VALUES (1, 'Correcteur1');
+INSERT INTO correcteur (id, nom) VALUES (2, 'Correcteur2');
 
 -- Insertion des résolutions
-INSERT INTO resolution (nom) VALUES ('Petit');
-INSERT INTO resolution (nom) VALUES ('Grand');
-INSERT INTO resolution (nom) VALUES ('Moyenne');
+INSERT INTO resolution (id, nom) VALUES (1, 'Petit');
+INSERT INTO resolution (id, nom) VALUES (2, 'Grand');
+INSERT INTO resolution (id, nom) VALUES (3, 'Moyenne');
 
 -- Insertion des opérateurs
-INSERT INTO operateur (operateur) VALUES ('<');
-INSERT INTO operateur (operateur) VALUES ('<=');
-INSERT INTO operateur (operateur) VALUES ('>');
-INSERT INTO operateur (operateur) VALUES ('>=');
+INSERT INTO operateur (id, operateur) VALUES (1, '<');
+INSERT INTO operateur (id, operateur) VALUES (2, '<=');
+INSERT INTO operateur (id, operateur) VALUES (3, '>');
+INSERT INTO operateur (id, operateur) VALUES (4, '>=');
 
--- Insertion des paramètres pour JAVA
--- JAVA avec opérateur > et résolution Grand, seuil 7
-INSERT INTO parametre (idmatiere, diff, idoperateur, idresolution) 
-VALUES (1, '7', 3, 2);
+-- Insertion des paramètres
+INSERT INTO parametre (id, idmatiere, diff, idoperateur, idresolution) VALUES (7, 1, 2.00, 1, 2);
+INSERT INTO parametre (id, idmatiere, diff, idoperateur, idresolution) VALUES (8, 1, 2.00, 4, 3);
+INSERT INTO parametre (id, idmatiere, diff, idoperateur, idresolution) VALUES (9, 2, 3.00, 2, 1);
+INSERT INTO parametre (id, idmatiere, diff, idoperateur, idresolution) VALUES (10, 2, 3.00, 3, 2);
 
-INSERT INTO parametre (idmatiere, diff, idoperateur, idresolution) 
-VALUES (1, '7', 4, 3);
-
--- JAVA avec opérateur < et résolution Petit, seuil 2
-INSERT INTO parametre (idmatiere, diff, idoperateur, idresolution) 
-VALUES (1, '2', 1, 1);
-
-INSERT INTO parametre (idmatiere, diff, idoperateur, idresolution) 
-VALUES (1, '2', 2, 2);
-
--- Insertion des paramètres pour PHP
--- PHP avec opérateur < et résolution Petit, seuil 2
-INSERT INTO parametre (idmatiere, diff, idoperateur, idresolution) 
-VALUES (2, '2', 1, 1);
-
-INSERT INTO parametre (idmatiere, diff, idoperateur, idresolution) 
-VALUES (2, '2', 3, 2);
-
--- Insertion des notes pour Candidat1
--- Candidat1 - JAVA avec Correcteur1
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (15, 1, 1, 1);
-
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (10, 1, 1, 2);
-
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (12, 1, 1, 3);
-
--- Candidat1 - JAVA avec Correcteur2
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (9, 1, 1, 2);
-
--- Candidat1 - PHP avec Correcteur1
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (8, 1, 2, 1);
-
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (11, 1, 2, 3);
-
--- Candidat1 - PHP avec Correcteur2
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (10, 1, 2, 1);
-
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (10, 1, 2, 2);
-
--- Insertion des notes pour Candidat2
--- Candidat2 - JAVA avec Correcteur2
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (13, 2, 1, 2);
-
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (11, 2, 1, 3);
-
--- Candidat2 - PHP avec Correcteur1
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (14, 2, 2, 1);
-
--- Candidat2 - PHP avec Correcteur2
-INSERT INTO note (note, idcandidat, idmatiere, idcorrecteur) 
-VALUES (16, 2, 2, 2);
+-- Insertion des notes
+INSERT INTO note (id, note, idcandidat, idmatiere, idcorrecteur) VALUES (1, 12.00, 1, 1, 1);
+INSERT INTO note (id, note, idcandidat, idmatiere, idcorrecteur) VALUES (2, 11.00, 1, 1, 2);
+INSERT INTO note (id, note, idcandidat, idmatiere, idcorrecteur) VALUES (4, 13.00, 1, 2, 1);
+INSERT INTO note (id, note, idcandidat, idmatiere, idcorrecteur) VALUES (5, 15.00, 1, 2, 2);
+INSERT INTO note (id, note, idcandidat, idmatiere, idcorrecteur) VALUES (7, 12.00, 2, 1, 1);
+INSERT INTO note (id, note, idcandidat, idmatiere, idcorrecteur) VALUES (8, 15.00, 2, 1, 2);
+INSERT INTO note (id, note, idcandidat, idmatiere, idcorrecteur) VALUES (9, 14.00, 2, 2, 1);
+INSERT INTO note (id, note, idcandidat, idmatiere, idcorrecteur) VALUES (11, 16.00, 2, 2, 2);
